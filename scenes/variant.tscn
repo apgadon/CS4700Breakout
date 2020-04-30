@@ -1,0 +1,2506 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/paddle.png" type="Texture" id=1]
+[ext_resource path="res://assets/brick.png" type="Texture" id=2]
+[ext_resource path="res://scripts/Paddle.gd" type="Script" id=3]
+[ext_resource path="res://scripts/PaddleVertical.gd" type="Script" id=4]
+[ext_resource path="res://scenes/VariantBall.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 136.39, 20.2012 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 27.015, 10 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Paddles" type="Node" parent="."]
+
+[node name="paddle" type="KinematicBody2D" parent="Paddles" groups=[
+"paddles",
+]]
+position = Vector2( 519.207, 560.217 )
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paddles/paddle"]
+position = Vector2( 8.79303, 23.7827 )
+scale = Vector2( 1, 0.543668 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Anchor" type="Position2D" parent="Paddles/paddle/CollisionShape2D"]
+position = Vector2( 0, 25 )
+scale = Vector2( 1, 1.83936 )
+
+[node name="Sprite" type="Sprite" parent="Paddles/paddle"]
+position = Vector2( 8.79303, 23.7827 )
+scale = Vector2( 1, 0.543668 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="paddle2" type="KinematicBody2D" parent="Paddles" groups=[
+"paddles",
+]]
+position = Vector2( 520, -8 )
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paddles/paddle2"]
+position = Vector2( 8, 24 )
+scale = Vector2( 1, 0.543668 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Anchor" type="Position2D" parent="Paddles/paddle2/CollisionShape2D"]
+position = Vector2( 0, -25 )
+scale = Vector2( 1, 1.83936 )
+
+[node name="Sprite" type="Sprite" parent="Paddles/paddle2"]
+position = Vector2( 8.79303, 23.7827 )
+scale = Vector2( 1, 0.543668 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="paddle3" type="KinematicBody2D" parent="Paddles" groups=[
+"paddles",
+]]
+position = Vector2( 39.9999, 280 )
+rotation = 1.56958
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paddles/paddle3"]
+position = Vector2( 8, 24 )
+scale = Vector2( 1, 0.543668 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Anchor" type="Position2D" parent="Paddles/paddle3/CollisionShape2D"]
+position = Vector2( 0, 25 )
+
+[node name="Sprite" type="Sprite" parent="Paddles/paddle3"]
+position = Vector2( 8.79303, 23.7827 )
+scale = Vector2( 1, 0.543668 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="paddle4" type="KinematicBody2D" parent="Paddles" groups=[
+"paddles",
+]]
+position = Vector2( 1032, 280 )
+rotation = 1.56958
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paddles/paddle4"]
+position = Vector2( 8, 24 )
+scale = Vector2( 1, 0.543668 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Anchor" type="Position2D" parent="Paddles/paddle4/CollisionShape2D"]
+position = Vector2( 0, -25 )
+scale = Vector2( 1, 1.83936 )
+
+[node name="Sprite" type="Sprite" parent="Paddles/paddle4"]
+position = Vector2( 8.79303, 23.7827 )
+scale = Vector2( 1, 0.543668 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Bricks" type="Node" parent="."]
+
+[node name="Top" type="Node" parent="Bricks"]
+
+[node name="Row 1" type="Node" parent="Bricks/Top"]
+
+[node name="brick 1" type="StaticBody2D" parent="Bricks/Top/Row 1" groups=[
+"bricks",
+]]
+position = Vector2( 24, 32 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 1/brick 1"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 1/brick 1"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 2" type="StaticBody2D" parent="Bricks/Top/Row 1" groups=[
+"bricks",
+]]
+position = Vector2( 80, 32 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 1/brick 2"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 1/brick 2"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 3" type="StaticBody2D" parent="Bricks/Top/Row 1" groups=[
+"bricks",
+]]
+position = Vector2( 136, 32 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 1/brick 3"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 1/brick 3"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 4" type="StaticBody2D" parent="Bricks/Top/Row 1" groups=[
+"bricks",
+]]
+position = Vector2( 192, 32 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 1/brick 4"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 1/brick 4"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 5" type="StaticBody2D" parent="Bricks/Top/Row 1" groups=[
+"bricks",
+]]
+position = Vector2( 248, 32 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 1/brick 5"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 1/brick 5"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 6" type="StaticBody2D" parent="Bricks/Top/Row 1" groups=[
+"bricks",
+]]
+position = Vector2( 304, 32 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 1/brick 6"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 1/brick 6"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 7" type="StaticBody2D" parent="Bricks/Top/Row 1" groups=[
+"bricks",
+]]
+position = Vector2( 360, 32 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 1/brick 7"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 1/brick 7"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 8" type="StaticBody2D" parent="Bricks/Top/Row 1" groups=[
+"bricks",
+]]
+position = Vector2( 416, 32 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 1/brick 8"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 1/brick 8"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 9" type="StaticBody2D" parent="Bricks/Top/Row 1" groups=[
+"bricks",
+]]
+position = Vector2( 472, 32 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 1/brick 9"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 1/brick 9"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 10" type="StaticBody2D" parent="Bricks/Top/Row 1" groups=[
+"bricks",
+]]
+position = Vector2( 528, 32 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 1/brick 10"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 1/brick 10"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 11" type="StaticBody2D" parent="Bricks/Top/Row 1" groups=[
+"bricks",
+]]
+position = Vector2( 584, 32 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 1/brick 11"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 1/brick 11"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 12" type="StaticBody2D" parent="Bricks/Top/Row 1" groups=[
+"bricks",
+]]
+position = Vector2( 640, 32 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 1/brick 12"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 1/brick 12"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 13" type="StaticBody2D" parent="Bricks/Top/Row 1" groups=[
+"bricks",
+]]
+position = Vector2( 696, 32 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 1/brick 13"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 1/brick 13"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 14" type="StaticBody2D" parent="Bricks/Top/Row 1" groups=[
+"bricks",
+]]
+position = Vector2( 752, 32 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 1/brick 14"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 1/brick 14"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 15" type="StaticBody2D" parent="Bricks/Top/Row 1" groups=[
+"bricks",
+]]
+position = Vector2( 808, 32 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 1/brick 15"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 1/brick 15"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Row 2" type="Node" parent="Bricks/Top"]
+
+[node name="brick 1" type="StaticBody2D" parent="Bricks/Top/Row 2" groups=[
+"bricks",
+]]
+position = Vector2( 24, 55 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 2/brick 1"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 2/brick 1"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 2" type="StaticBody2D" parent="Bricks/Top/Row 2" groups=[
+"bricks",
+]]
+position = Vector2( 80, 55 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 2/brick 2"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 2/brick 2"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 3" type="StaticBody2D" parent="Bricks/Top/Row 2" groups=[
+"bricks",
+]]
+position = Vector2( 136, 55 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 2/brick 3"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 2/brick 3"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 4" type="StaticBody2D" parent="Bricks/Top/Row 2" groups=[
+"bricks",
+]]
+position = Vector2( 192, 55 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 2/brick 4"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 2/brick 4"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 5" type="StaticBody2D" parent="Bricks/Top/Row 2" groups=[
+"bricks",
+]]
+position = Vector2( 248, 55 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 2/brick 5"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 2/brick 5"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 6" type="StaticBody2D" parent="Bricks/Top/Row 2" groups=[
+"bricks",
+]]
+position = Vector2( 304, 55 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 2/brick 6"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 2/brick 6"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 7" type="StaticBody2D" parent="Bricks/Top/Row 2" groups=[
+"bricks",
+]]
+position = Vector2( 360, 55 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 2/brick 7"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 2/brick 7"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 8" type="StaticBody2D" parent="Bricks/Top/Row 2" groups=[
+"bricks",
+]]
+position = Vector2( 416, 55 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 2/brick 8"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 2/brick 8"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 9" type="StaticBody2D" parent="Bricks/Top/Row 2" groups=[
+"bricks",
+]]
+position = Vector2( 472, 55 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 2/brick 9"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 2/brick 9"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 10" type="StaticBody2D" parent="Bricks/Top/Row 2" groups=[
+"bricks",
+]]
+position = Vector2( 528, 55 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 2/brick 10"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 2/brick 10"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 11" type="StaticBody2D" parent="Bricks/Top/Row 2" groups=[
+"bricks",
+]]
+position = Vector2( 584, 55 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 2/brick 11"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 2/brick 11"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 12" type="StaticBody2D" parent="Bricks/Top/Row 2" groups=[
+"bricks",
+]]
+position = Vector2( 640, 55 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 2/brick 12"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 2/brick 12"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 13" type="StaticBody2D" parent="Bricks/Top/Row 2" groups=[
+"bricks",
+]]
+position = Vector2( 696, 55 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 2/brick 13"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 2/brick 13"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 14" type="StaticBody2D" parent="Bricks/Top/Row 2" groups=[
+"bricks",
+]]
+position = Vector2( 752, 55 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 2/brick 14"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 2/brick 14"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 15" type="StaticBody2D" parent="Bricks/Top/Row 2" groups=[
+"bricks",
+]]
+position = Vector2( 808, 55 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 2/brick 15"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 2/brick 15"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Row 3" type="Node" parent="Bricks/Top"]
+
+[node name="brick 1" type="StaticBody2D" parent="Bricks/Top/Row 3" groups=[
+"bricks",
+]]
+position = Vector2( 24, 78 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 3/brick 1"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 3/brick 1"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 2" type="StaticBody2D" parent="Bricks/Top/Row 3" groups=[
+"bricks",
+]]
+position = Vector2( 80, 78 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 3/brick 2"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 3/brick 2"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 3" type="StaticBody2D" parent="Bricks/Top/Row 3" groups=[
+"bricks",
+]]
+position = Vector2( 136, 78 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 3/brick 3"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 3/brick 3"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 4" type="StaticBody2D" parent="Bricks/Top/Row 3" groups=[
+"bricks",
+]]
+position = Vector2( 192, 78 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 3/brick 4"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 3/brick 4"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 5" type="StaticBody2D" parent="Bricks/Top/Row 3" groups=[
+"bricks",
+]]
+position = Vector2( 248, 78 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 3/brick 5"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 3/brick 5"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 6" type="StaticBody2D" parent="Bricks/Top/Row 3" groups=[
+"bricks",
+]]
+position = Vector2( 304, 78 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 3/brick 6"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 3/brick 6"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 7" type="StaticBody2D" parent="Bricks/Top/Row 3" groups=[
+"bricks",
+]]
+position = Vector2( 360, 78 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 3/brick 7"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 3/brick 7"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 8" type="StaticBody2D" parent="Bricks/Top/Row 3" groups=[
+"bricks",
+]]
+position = Vector2( 416, 78 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 3/brick 8"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 3/brick 8"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 9" type="StaticBody2D" parent="Bricks/Top/Row 3" groups=[
+"bricks",
+]]
+position = Vector2( 472, 78 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 3/brick 9"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 3/brick 9"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 10" type="StaticBody2D" parent="Bricks/Top/Row 3" groups=[
+"bricks",
+]]
+position = Vector2( 528, 78 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 3/brick 10"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 3/brick 10"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 11" type="StaticBody2D" parent="Bricks/Top/Row 3" groups=[
+"bricks",
+]]
+position = Vector2( 584, 78 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 3/brick 11"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 3/brick 11"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 12" type="StaticBody2D" parent="Bricks/Top/Row 3" groups=[
+"bricks",
+]]
+position = Vector2( 640, 78 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 3/brick 12"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 3/brick 12"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 13" type="StaticBody2D" parent="Bricks/Top/Row 3" groups=[
+"bricks",
+]]
+position = Vector2( 696, 78 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 3/brick 13"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 3/brick 13"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 14" type="StaticBody2D" parent="Bricks/Top/Row 3" groups=[
+"bricks",
+]]
+position = Vector2( 752, 78 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 3/brick 14"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 3/brick 14"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 15" type="StaticBody2D" parent="Bricks/Top/Row 3" groups=[
+"bricks",
+]]
+position = Vector2( 808, 78 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/Top/Row 3/brick 15"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/Top/Row 3/brick 15"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="bottom" type="Node" parent="Bricks"]
+
+[node name="Row 1" type="Node" parent="Bricks/bottom"]
+
+[node name="brick 1" type="StaticBody2D" parent="Bricks/bottom/Row 1" groups=[
+"bricks",
+]]
+position = Vector2( 24, 416 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 1/brick 1"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 1/brick 1"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 2" type="StaticBody2D" parent="Bricks/bottom/Row 1" groups=[
+"bricks",
+]]
+position = Vector2( 80, 416 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 1/brick 2"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 1/brick 2"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 3" type="StaticBody2D" parent="Bricks/bottom/Row 1" groups=[
+"bricks",
+]]
+position = Vector2( 136, 416 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 1/brick 3"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 1/brick 3"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 4" type="StaticBody2D" parent="Bricks/bottom/Row 1" groups=[
+"bricks",
+]]
+position = Vector2( 192, 416 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 1/brick 4"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 1/brick 4"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 5" type="StaticBody2D" parent="Bricks/bottom/Row 1" groups=[
+"bricks",
+]]
+position = Vector2( 248, 416 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 1/brick 5"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 1/brick 5"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 6" type="StaticBody2D" parent="Bricks/bottom/Row 1" groups=[
+"bricks",
+]]
+position = Vector2( 304, 416 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 1/brick 6"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 1/brick 6"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 7" type="StaticBody2D" parent="Bricks/bottom/Row 1" groups=[
+"bricks",
+]]
+position = Vector2( 360, 416 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 1/brick 7"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 1/brick 7"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 8" type="StaticBody2D" parent="Bricks/bottom/Row 1" groups=[
+"bricks",
+]]
+position = Vector2( 416, 416 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 1/brick 8"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 1/brick 8"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 9" type="StaticBody2D" parent="Bricks/bottom/Row 1" groups=[
+"bricks",
+]]
+position = Vector2( 472, 416 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 1/brick 9"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 1/brick 9"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 10" type="StaticBody2D" parent="Bricks/bottom/Row 1" groups=[
+"bricks",
+]]
+position = Vector2( 528, 416 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 1/brick 10"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 1/brick 10"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 11" type="StaticBody2D" parent="Bricks/bottom/Row 1" groups=[
+"bricks",
+]]
+position = Vector2( 584, 416 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 1/brick 11"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 1/brick 11"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 12" type="StaticBody2D" parent="Bricks/bottom/Row 1" groups=[
+"bricks",
+]]
+position = Vector2( 640, 416 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 1/brick 12"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 1/brick 12"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 13" type="StaticBody2D" parent="Bricks/bottom/Row 1" groups=[
+"bricks",
+]]
+position = Vector2( 696, 416 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 1/brick 13"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 1/brick 13"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 14" type="StaticBody2D" parent="Bricks/bottom/Row 1" groups=[
+"bricks",
+]]
+position = Vector2( 752, 416 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 1/brick 14"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 1/brick 14"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 15" type="StaticBody2D" parent="Bricks/bottom/Row 1" groups=[
+"bricks",
+]]
+position = Vector2( 808, 416 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 1/brick 15"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 1/brick 15"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Row 2" type="Node" parent="Bricks/bottom"]
+
+[node name="brick 1" type="StaticBody2D" parent="Bricks/bottom/Row 2" groups=[
+"bricks",
+]]
+position = Vector2( 24, 439 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 2/brick 1"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 2/brick 1"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 2" type="StaticBody2D" parent="Bricks/bottom/Row 2" groups=[
+"bricks",
+]]
+position = Vector2( 80, 439 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 2/brick 2"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 2/brick 2"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 3" type="StaticBody2D" parent="Bricks/bottom/Row 2" groups=[
+"bricks",
+]]
+position = Vector2( 136, 439 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 2/brick 3"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 2/brick 3"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 4" type="StaticBody2D" parent="Bricks/bottom/Row 2" groups=[
+"bricks",
+]]
+position = Vector2( 192, 439 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 2/brick 4"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 2/brick 4"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 5" type="StaticBody2D" parent="Bricks/bottom/Row 2" groups=[
+"bricks",
+]]
+position = Vector2( 248, 439 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 2/brick 5"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 2/brick 5"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 6" type="StaticBody2D" parent="Bricks/bottom/Row 2" groups=[
+"bricks",
+]]
+position = Vector2( 304, 439 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 2/brick 6"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 2/brick 6"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 7" type="StaticBody2D" parent="Bricks/bottom/Row 2" groups=[
+"bricks",
+]]
+position = Vector2( 360, 439 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 2/brick 7"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 2/brick 7"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 8" type="StaticBody2D" parent="Bricks/bottom/Row 2" groups=[
+"bricks",
+]]
+position = Vector2( 416, 439 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 2/brick 8"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 2/brick 8"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 9" type="StaticBody2D" parent="Bricks/bottom/Row 2" groups=[
+"bricks",
+]]
+position = Vector2( 472, 439 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 2/brick 9"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 2/brick 9"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 10" type="StaticBody2D" parent="Bricks/bottom/Row 2" groups=[
+"bricks",
+]]
+position = Vector2( 528, 439 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 2/brick 10"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 2/brick 10"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 11" type="StaticBody2D" parent="Bricks/bottom/Row 2" groups=[
+"bricks",
+]]
+position = Vector2( 584, 439 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 2/brick 11"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 2/brick 11"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 12" type="StaticBody2D" parent="Bricks/bottom/Row 2" groups=[
+"bricks",
+]]
+position = Vector2( 640, 439 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 2/brick 12"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 2/brick 12"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 13" type="StaticBody2D" parent="Bricks/bottom/Row 2" groups=[
+"bricks",
+]]
+position = Vector2( 696, 439 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 2/brick 13"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 2/brick 13"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 14" type="StaticBody2D" parent="Bricks/bottom/Row 2" groups=[
+"bricks",
+]]
+position = Vector2( 752, 439 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 2/brick 14"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 2/brick 14"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 15" type="StaticBody2D" parent="Bricks/bottom/Row 2" groups=[
+"bricks",
+]]
+position = Vector2( 808, 439 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 2/brick 15"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 2/brick 15"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Row 3" type="Node" parent="Bricks/bottom"]
+
+[node name="brick 1" type="StaticBody2D" parent="Bricks/bottom/Row 3" groups=[
+"bricks",
+]]
+position = Vector2( 24, 462 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 3/brick 1"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 3/brick 1"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 2" type="StaticBody2D" parent="Bricks/bottom/Row 3" groups=[
+"bricks",
+]]
+position = Vector2( 80, 462 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 3/brick 2"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 3/brick 2"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 3" type="StaticBody2D" parent="Bricks/bottom/Row 3" groups=[
+"bricks",
+]]
+position = Vector2( 136, 462 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 3/brick 3"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 3/brick 3"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 4" type="StaticBody2D" parent="Bricks/bottom/Row 3" groups=[
+"bricks",
+]]
+position = Vector2( 192, 462 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 3/brick 4"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 3/brick 4"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 5" type="StaticBody2D" parent="Bricks/bottom/Row 3" groups=[
+"bricks",
+]]
+position = Vector2( 248, 462 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 3/brick 5"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 3/brick 5"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 6" type="StaticBody2D" parent="Bricks/bottom/Row 3" groups=[
+"bricks",
+]]
+position = Vector2( 304, 462 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 3/brick 6"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 3/brick 6"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 7" type="StaticBody2D" parent="Bricks/bottom/Row 3" groups=[
+"bricks",
+]]
+position = Vector2( 360, 462 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 3/brick 7"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 3/brick 7"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 8" type="StaticBody2D" parent="Bricks/bottom/Row 3" groups=[
+"bricks",
+]]
+position = Vector2( 416, 462 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 3/brick 8"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 3/brick 8"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 9" type="StaticBody2D" parent="Bricks/bottom/Row 3" groups=[
+"bricks",
+]]
+position = Vector2( 472, 462 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 3/brick 9"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 3/brick 9"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 10" type="StaticBody2D" parent="Bricks/bottom/Row 3" groups=[
+"bricks",
+]]
+position = Vector2( 528, 462 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 3/brick 10"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 3/brick 10"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 11" type="StaticBody2D" parent="Bricks/bottom/Row 3" groups=[
+"bricks",
+]]
+position = Vector2( 584, 462 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 3/brick 11"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 3/brick 11"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 12" type="StaticBody2D" parent="Bricks/bottom/Row 3" groups=[
+"bricks",
+]]
+position = Vector2( 640, 462 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 3/brick 12"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 3/brick 12"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 13" type="StaticBody2D" parent="Bricks/bottom/Row 3" groups=[
+"bricks",
+]]
+position = Vector2( 696, 462 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 3/brick 13"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 3/brick 13"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 14" type="StaticBody2D" parent="Bricks/bottom/Row 3" groups=[
+"bricks",
+]]
+position = Vector2( 752, 462 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 3/brick 14"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 3/brick 14"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 15" type="StaticBody2D" parent="Bricks/bottom/Row 3" groups=[
+"bricks",
+]]
+position = Vector2( 808, 462 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/bottom/Row 3/brick 15"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/bottom/Row 3/brick 15"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="corners" type="Node" parent="Bricks"]
+
+[node name="upper right" type="Node" parent="Bricks/corners"]
+
+[node name="brick 1" type="StaticBody2D" parent="Bricks/corners/upper right" groups=[
+"bricks",
+]]
+position = Vector2( -32, -8 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/corners/upper right/brick 1"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/corners/upper right/brick 1"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 2" type="StaticBody2D" parent="Bricks/corners/upper right" groups=[
+"bricks",
+]]
+position = Vector2( -7, 182 )
+rotation = -1.56009
+
+[node name="Sprite" type="Sprite" parent="Bricks/corners/upper right/brick 2"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/corners/upper right/brick 2"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 3" type="StaticBody2D" parent="Bricks/corners/upper right" groups=[
+"bricks",
+]]
+position = Vector2( 24, -8 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/corners/upper right/brick 3"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/corners/upper right/brick 3"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="bottom left" type="Node" parent="Bricks/corners"]
+
+[node name="brick 4" type="StaticBody2D" parent="Bricks/corners/bottom left" groups=[
+"bricks",
+]]
+position = Vector2( -24, 496 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/corners/bottom left/brick 4"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/corners/bottom left/brick 4"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 5" type="StaticBody2D" parent="Bricks/corners/bottom left" groups=[
+"bricks",
+]]
+position = Vector2( 1, 607 )
+rotation = -1.56009
+
+[node name="Sprite" type="Sprite" parent="Bricks/corners/bottom left/brick 5"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/corners/bottom left/brick 5"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 6" type="StaticBody2D" parent="Bricks/corners/bottom left" groups=[
+"bricks",
+]]
+position = Vector2( 32, 496 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/corners/bottom left/brick 6"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/corners/bottom left/brick 6"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="bottom right" type="Node" parent="Bricks/corners"]
+
+[node name="brick 4" type="StaticBody2D" parent="Bricks/corners/bottom right" groups=[
+"bricks",
+]]
+position = Vector2( 856, -8 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/corners/bottom right/brick 4"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/corners/bottom right/brick 4"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 5" type="StaticBody2D" parent="Bricks/corners/bottom right" groups=[
+"bricks",
+]]
+position = Vector2( 916, 181 )
+rotation = -1.56009
+
+[node name="Sprite" type="Sprite" parent="Bricks/corners/bottom right/brick 5"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/corners/bottom right/brick 5"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 6" type="StaticBody2D" parent="Bricks/corners/bottom right" groups=[
+"bricks",
+]]
+position = Vector2( 800, -8 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/corners/bottom right/brick 6"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/corners/bottom right/brick 6"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="upper left" type="Node" parent="Bricks/corners"]
+
+[node name="brick 7" type="StaticBody2D" parent="Bricks/corners/upper left" groups=[
+"bricks",
+]]
+position = Vector2( 800, 497 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/corners/upper left/brick 7"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/corners/upper left/brick 7"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 8" type="StaticBody2D" parent="Bricks/corners/upper left" groups=[
+"bricks",
+]]
+position = Vector2( 916, 608 )
+rotation = -1.56009
+
+[node name="Sprite" type="Sprite" parent="Bricks/corners/upper left/brick 8"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/corners/upper left/brick 8"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 9" type="StaticBody2D" parent="Bricks/corners/upper left" groups=[
+"bricks",
+]]
+position = Vector2( 856, 497 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/corners/upper left/brick 9"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/corners/upper left/brick 9"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="center" type="Node" parent="Bricks"]
+
+[node name="left side" type="Node" parent="Bricks/center"]
+
+[node name="brick 12" type="StaticBody2D" parent="Bricks/center/left side" groups=[
+"bricks",
+]]
+position = Vector2( 152, 150 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/center/left side/brick 12"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/center/left side/brick 12"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 11" type="StaticBody2D" parent="Bricks/center/left side" groups=[
+"bricks",
+]]
+position = Vector2( 155, 283 )
+rotation = -1.56009
+
+[node name="Sprite" type="Sprite" parent="Bricks/center/left side/brick 11"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/center/left side/brick 11"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 10" type="StaticBody2D" parent="Bricks/center/left side" groups=[
+"bricks",
+]]
+position = Vector2( 296, 207.143 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/center/left side/brick 10"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/center/left side/brick 10"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 16" type="StaticBody2D" parent="Bricks/center/left side" groups=[
+"bricks",
+]]
+position = Vector2( 296, 279.143 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/center/left side/brick 16"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/center/left side/brick 16"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 15" type="StaticBody2D" parent="Bricks/center/left side" groups=[
+"bricks",
+]]
+position = Vector2( 154, 343 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/center/left side/brick 15"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/center/left side/brick 15"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 14" type="StaticBody2D" parent="Bricks/center/left side" groups=[
+"bricks",
+]]
+position = Vector2( 156, 510 )
+rotation = -1.56009
+
+[node name="Sprite" type="Sprite" parent="Bricks/center/left side/brick 14"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/center/left side/brick 14"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 13" type="StaticBody2D" parent="Bricks/center/left side" groups=[
+"bricks",
+]]
+position = Vector2( 232, 239.143 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/center/left side/brick 13"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/center/left side/brick 13"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="right side" type="Node" parent="Bricks/center"]
+
+[node name="brick 12" type="StaticBody2D" parent="Bricks/center/right side" groups=[
+"bricks",
+]]
+position = Vector2( 682.576, 150 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/center/right side/brick 12"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/center/right side/brick 12"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 11" type="StaticBody2D" parent="Bricks/center/right side" groups=[
+"bricks",
+]]
+position = Vector2( 764.597, 283 )
+rotation = -1.56009
+
+[node name="Sprite" type="Sprite" parent="Bricks/center/right side/brick 11"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/center/right side/brick 11"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 10" type="StaticBody2D" parent="Bricks/center/right side" groups=[
+"bricks",
+]]
+position = Vector2( 533.493, 207.143 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/center/right side/brick 10"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/center/right side/brick 10"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 16" type="StaticBody2D" parent="Bricks/center/right side" groups=[
+"bricks",
+]]
+position = Vector2( 534.35, 279.143 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/center/right side/brick 16"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/center/right side/brick 16"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 15" type="StaticBody2D" parent="Bricks/center/right side" groups=[
+"bricks",
+]]
+position = Vector2( 683.858, 343 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/center/right side/brick 15"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/center/right side/brick 15"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 14" type="StaticBody2D" parent="Bricks/center/right side" groups=[
+"bricks",
+]]
+position = Vector2( 764.736, 510 )
+rotation = -1.56009
+
+[node name="Sprite" type="Sprite" parent="Bricks/center/right side/brick 14"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/center/right side/brick 14"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 13" type="StaticBody2D" parent="Bricks/center/right side" groups=[
+"bricks",
+]]
+position = Vector2( 591.24, 239.143 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/center/right side/brick 13"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/center/right side/brick 13"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="brick 17" type="StaticBody2D" parent="Bricks/center" groups=[
+"bricks",
+]]
+position = Vector2( 415.214, 239.167 )
+
+[node name="Sprite" type="Sprite" parent="Bricks/center/brick 17"]
+position = Vector2( 97, 54 )
+scale = Vector2( 0.435484, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bricks/center/brick 17"]
+position = Vector2( 97, 54 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="VariantBall" parent="." instance=ExtResource( 5 )]
