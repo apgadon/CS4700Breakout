@@ -53,13 +53,10 @@ func _physics_process(delta):
 			get_tree().reload_current_scene()
 
 func _integrate_forces(state):
-		if get_position().y > get_viewport_rect().end.y:
-			$Lose.play()
-			started = false
-			lives = lives - 1
-			if lives <= 0:
-				$Lose.stop()
-				gameOver = true
-				set_linear_velocity(Vector2(0, 0))
-			else:
-				state.set_transform(Transform2D(0.0, Vector2(get_node("/root/Node2D/Paddle").get_global_position().x, 555)))
+	if get_position().y > get_viewport_rect().end.y:
+		$Lose.play()
+		started = false
+		lives = lives - 1
+		if lives <= 0:
+			gameOver = true
+		state.set_transform(Transform2D(0.0, Vector2(get_node("/root/Node2D/Paddle").get_global_position().x, 555)))

@@ -53,13 +53,13 @@ func _physics_process(delta):
 			get_tree().reload_current_scene()
 
 func _integrate_forces(state):
-		if is_out_of_bounds():
-			$Lose.play()
-			started = false
-			lives = lives - 1
-			if lives <= 0:
-				gameOver = true
-			state.set_transform(Transform2D(0.0, Vector2(37, get_node("/root/Node2D/Paddles/paddle3/CollisionShape2D").get_global_position().y)))
+	if is_out_of_bounds():
+		$Lose.play()
+		started = false
+		lives = lives - 1
+		if lives <= 0:
+			gameOver = true
+		state.set_transform(Transform2D(0.0, Vector2(37, get_node("/root/Node2D/Paddles/paddle3/CollisionShape2D").get_global_position().y)))
 
 func is_out_of_bounds():
 	return get_position().y > get_viewport_rect().end.y or get_position().y < 0 or get_position().x > get_viewport_rect().end.x or get_position().x < 0
