@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Wall.wav-81c1a1834821b720806a973842370ecb.sample"
+path="res://.import/Wall.wav-1890bdab6f8e9328831976d2f40115e9.sample"
 
 [deps]
 
-source_file="res://assets/Wall.wav"
-dest_files=[ "res://.import/Wall.wav-81c1a1834821b720806a973842370ecb.sample" ]
+source_file="res://Assets/Wall.wav"
+dest_files=[ "res://.import/Wall.wav-1890bdab6f8e9328831976d2f40115e9.sample" ]
 
 [params]
 

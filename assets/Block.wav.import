@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Block.wav-c74a656dad56fa6f54f0d9de16379f20.sample"
+path="res://.import/Block.wav-498b5ff349c5f65c3f9e1fd27b6c6237.sample"
 
 [deps]
 
-source_file="res://assets/Block.wav"
-dest_files=[ "res://.import/Block.wav-c74a656dad56fa6f54f0d9de16379f20.sample" ]
+source_file="res://Assets/Block.wav"
+dest_files=[ "res://.import/Block.wav-498b5ff349c5f65c3f9e1fd27b6c6237.sample" ]
 
 [params]
 

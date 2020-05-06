@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Bar.wav-3332092b6387d463307bfc9e389004bc.sample"
+path="res://.import/Bar.wav-e89e20c1e5dcd2cccde47992185dd1e9.sample"
 
 [deps]
 
-source_file="res://assets/Bar.wav"
-dest_files=[ "res://.import/Bar.wav-3332092b6387d463307bfc9e389004bc.sample" ]
+source_file="res://Assets/Bar.wav"
+dest_files=[ "res://.import/Bar.wav-e89e20c1e5dcd2cccde47992185dd1e9.sample" ]
 
 [params]
 

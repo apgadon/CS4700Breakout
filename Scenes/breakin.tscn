@@ -1,0 +1,966 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Scenes/Box.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/RightBar.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/LeftBar.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/GameOver2.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/Ball2.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/Bar.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/Lives.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/TopBar.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/PauseMenu2.gd" type="Script" id=9]
+[ext_resource path="res://Assets/bar_06.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Lose.wav" type="AudioStream" id=11]
+[ext_resource path="res://Assets/bar_05.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Block.wav" type="AudioStream" id=13]
+[ext_resource path="res://Assets/bar_04.png" type="Texture" id=14]
+[ext_resource path="res://Assets/bar_08.png" type="Texture" id=15]
+[ext_resource path="res://Assets/player_0.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Wall.wav" type="AudioStream" id=17]
+[ext_resource path="res://Assets/bar_09.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Bar.wav" type="AudioStream" id=19]
+[ext_resource path="res://Assets/bar_07.png" type="Texture" id=20]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 0.949318, 9.46054 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10, 312.842 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 526.25, 10 )
+
+[node name="SceneNode" type="Node2D"]
+
+[node name="BottomBar" type="Node2D" parent="."]
+
+[node name="Mid" type="KinematicBody2D" parent="BottomBar"]
+position = Vector2( 513.045, 577.649 )
+script = ExtResource( 6 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="BottomBar/Mid"]
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon" type="Sprite" parent="BottomBar/Mid/BarHitBox"]
+position = Vector2( -0.274334, -1.61322 )
+scale = Vector2( 0.0410507, 0.225131 )
+texture = ExtResource( 14 )
+
+[node name="LMid" type="KinematicBody2D" parent="BottomBar"]
+position = Vector2( 485.736, 577.649 )
+script = ExtResource( 6 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="BottomBar/LMid"]
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon3" type="Sprite" parent="BottomBar/LMid/BarHitBox"]
+position = Vector2( 5.14526, -1.61328 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 12 )
+
+[node name="LLMid" type="KinematicBody2D" parent="BottomBar"]
+position = Vector2( 458.398, 577.649 )
+script = ExtResource( 6 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="BottomBar/LLMid"]
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon4" type="Sprite" parent="BottomBar/LLMid/BarHitBox"]
+position = Vector2( -0.321777, -1.61328 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 10 )
+
+[node name="LLLMid" type="KinematicBody2D" parent="BottomBar"]
+position = Vector2( 431.089, 577.649 )
+script = ExtResource( 6 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="BottomBar/LLLMid"]
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon5" type="Sprite" parent="BottomBar/LLLMid/BarHitBox"]
+position = Vector2( -0.290649, -1.61328 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 20 )
+
+[node name="LLLLMid" type="KinematicBody2D" parent="BottomBar"]
+position = Vector2( 403.926, 577.649 )
+script = ExtResource( 6 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="BottomBar/LLLLMid"]
+position = Vector2( 0.0123291, 0.0418701 )
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon6" type="Sprite" parent="BottomBar/LLLLMid/BarHitBox"]
+position = Vector2( -0.274109, -1.61328 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 15 )
+
+[node name="Right" type="KinematicBody2D" parent="BottomBar"]
+position = Vector2( 648.64, 577.649 )
+script = ExtResource( 6 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="BottomBar/Right"]
+position = Vector2( 1, 0 )
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon8" type="Sprite" parent="BottomBar/Right/BarHitBox"]
+position = Vector2( -0.467204, -1.61328 )
+scale = Vector2( 0.0332089, 0.225131 )
+texture = ExtResource( 18 )
+
+[node name="Left" type="KinematicBody2D" parent="BottomBar"]
+position = Vector2( 376.618, 577.649 )
+script = ExtResource( 6 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="BottomBar/Left"]
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon7" type="Sprite" parent="BottomBar/Left/BarHitBox"]
+position = Vector2( 0.003376, -1.61328 )
+scale = Vector2( 0.0328888, 0.225131 )
+texture = ExtResource( 18 )
+
+[node name="RRRRMid" type="KinematicBody2D" parent="BottomBar"]
+position = Vector2( 622.301, 577.649 )
+script = ExtResource( 6 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="BottomBar/RRRRMid"]
+position = Vector2( 0.277374, 0 )
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon7" type="Sprite" parent="BottomBar/RRRRMid/BarHitBox"]
+position = Vector2( -0.283142, -1.66016 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 15 )
+
+[node name="RRRMid" type="KinematicBody2D" parent="BottomBar"]
+position = Vector2( 594.992, 577.649 )
+script = ExtResource( 6 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="BottomBar/RRRMid"]
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon6" type="Sprite" parent="BottomBar/RRRMid/BarHitBox"]
+position = Vector2( -0.380615, -1.61328 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 20 )
+
+[node name="RRMid" type="KinematicBody2D" parent="BottomBar"]
+position = Vector2( 567.829, 577.649 )
+script = ExtResource( 6 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="BottomBar/RRMid"]
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon5" type="Sprite" parent="BottomBar/RRMid/BarHitBox"]
+position = Vector2( -0.264893, -1.61328 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 10 )
+
+[node name="RMid" type="KinematicBody2D" parent="BottomBar"]
+position = Vector2( 540.521, 577.649 )
+script = ExtResource( 6 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="BottomBar/RMid"]
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon2" type="Sprite" parent="BottomBar/RMid/BarHitBox"]
+position = Vector2( -5.81055, -1.61328 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 12 )
+
+[node name="TopBar" type="Node2D" parent="."]
+
+[node name="Mid2" type="KinematicBody2D" parent="TopBar"]
+position = Vector2( 513.045, 22.7741 )
+script = ExtResource( 8 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="TopBar/Mid2"]
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon" type="Sprite" parent="TopBar/Mid2/BarHitBox"]
+position = Vector2( -0.274334, -1.61322 )
+scale = Vector2( 0.0410507, 0.225131 )
+texture = ExtResource( 14 )
+
+[node name="LMid2" type="KinematicBody2D" parent="TopBar"]
+position = Vector2( 485.736, 22.649 )
+script = ExtResource( 8 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="TopBar/LMid2"]
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon3" type="Sprite" parent="TopBar/LMid2/BarHitBox"]
+position = Vector2( 5.14526, -1.61328 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 12 )
+
+[node name="LLMid2" type="KinematicBody2D" parent="TopBar"]
+position = Vector2( 458.398, 22.649 )
+script = ExtResource( 8 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="TopBar/LLMid2"]
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon4" type="Sprite" parent="TopBar/LLMid2/BarHitBox"]
+position = Vector2( -0.321777, -1.61328 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 10 )
+
+[node name="LLLMid2" type="KinematicBody2D" parent="TopBar"]
+position = Vector2( 431.089, 22.649 )
+script = ExtResource( 8 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="TopBar/LLLMid2"]
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon5" type="Sprite" parent="TopBar/LLLMid2/BarHitBox"]
+position = Vector2( -0.290649, -1.61328 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 20 )
+
+[node name="LLLLMid2" type="KinematicBody2D" parent="TopBar"]
+position = Vector2( 403.926, 22.649 )
+script = ExtResource( 8 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="TopBar/LLLLMid2"]
+position = Vector2( 0.0123291, 0.0418701 )
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon6" type="Sprite" parent="TopBar/LLLLMid2/BarHitBox"]
+position = Vector2( -0.274109, -1.61328 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 15 )
+
+[node name="Left2" type="KinematicBody2D" parent="TopBar"]
+position = Vector2( 376.618, 22.649 )
+script = ExtResource( 8 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="TopBar/Left2"]
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon7" type="Sprite" parent="TopBar/Left2/BarHitBox"]
+position = Vector2( 0.003376, -1.61328 )
+scale = Vector2( 0.0328888, 0.225131 )
+texture = ExtResource( 18 )
+
+[node name="Right2" type="KinematicBody2D" parent="TopBar"]
+position = Vector2( 648.64, 22.649 )
+script = ExtResource( 8 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="TopBar/Right2"]
+position = Vector2( 1, 0 )
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon8" type="Sprite" parent="TopBar/Right2/BarHitBox"]
+position = Vector2( -0.467204, -1.61328 )
+scale = Vector2( 0.0332089, 0.225131 )
+texture = ExtResource( 18 )
+
+[node name="RRRRMid2" type="KinematicBody2D" parent="TopBar"]
+position = Vector2( 622.301, 22.649 )
+script = ExtResource( 8 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="TopBar/RRRRMid2"]
+position = Vector2( 0.277374, 0 )
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon7" type="Sprite" parent="TopBar/RRRRMid2/BarHitBox"]
+position = Vector2( -0.283142, -1.66016 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 15 )
+
+[node name="RRRMid2" type="KinematicBody2D" parent="TopBar"]
+position = Vector2( 594.992, 22.649 )
+script = ExtResource( 8 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="TopBar/RRRMid2"]
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon6" type="Sprite" parent="TopBar/RRRMid2/BarHitBox"]
+position = Vector2( -0.380615, -1.61328 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 20 )
+
+[node name="RRMid2" type="KinematicBody2D" parent="TopBar"]
+position = Vector2( 567.829, 22.649 )
+script = ExtResource( 8 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="TopBar/RRMid2"]
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon5" type="Sprite" parent="TopBar/RRMid2/BarHitBox"]
+position = Vector2( -0.264893, -1.61328 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 10 )
+
+[node name="RMid2" type="KinematicBody2D" parent="TopBar"]
+position = Vector2( 540.521, 22.649 )
+script = ExtResource( 8 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="TopBar/RMid2"]
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon2" type="Sprite" parent="TopBar/RMid2/BarHitBox"]
+position = Vector2( -5.81055, -1.61328 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 12 )
+
+[node name="LeftBar" type="Node2D" parent="."]
+
+[node name="Mid3" type="KinematicBody2D" parent="LeftBar"]
+position = Vector2( 490.045, 523.649 )
+script = ExtResource( 3 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="LeftBar/Mid3"]
+position = Vector2( -468.123, -242.878 )
+rotation = 1.5708
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon" type="Sprite" parent="LeftBar/Mid3/BarHitBox"]
+position = Vector2( -0.274334, -1.61322 )
+scale = Vector2( 0.0410507, 0.225131 )
+texture = ExtResource( 14 )
+
+[node name="LMid3" type="KinematicBody2D" parent="LeftBar"]
+position = Vector2( 21.9318, 253.691 )
+script = ExtResource( 3 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="LeftBar/LMid3"]
+rotation = 1.5708
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon3" type="Sprite" parent="LeftBar/LMid3/BarHitBox"]
+position = Vector2( -0.254639, -1.61328 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 12 )
+
+[node name="LLMid3" type="KinematicBody2D" parent="LeftBar"]
+position = Vector2( 21.9449, 227.313 )
+script = ExtResource( 3 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="LeftBar/LLMid3"]
+rotation = 1.5708
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon4" type="Sprite" parent="LeftBar/LLMid3/BarHitBox"]
+position = Vector2( -0.321777, -1.61328 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 10 )
+
+[node name="LLLMid3" type="KinematicBody2D" parent="LeftBar"]
+position = Vector2( 21.9011, 199.806 )
+script = ExtResource( 3 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="LeftBar/LLLMid3"]
+rotation = 1.5708
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon5" type="Sprite" parent="LeftBar/LLLMid3/BarHitBox"]
+position = Vector2( -0.290649, -1.61328 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 20 )
+
+[node name="LLLLMid3" type="KinematicBody2D" parent="LeftBar"]
+position = Vector2( 21.8761, 172.194 )
+script = ExtResource( 3 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="LeftBar/LLLLMid3"]
+position = Vector2( 0.0123291, 0.0418701 )
+rotation = 1.5708
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon6" type="Sprite" parent="LeftBar/LLLLMid3/BarHitBox"]
+position = Vector2( -0.274109, -1.61328 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 15 )
+
+[node name="Left3" type="KinematicBody2D" parent="LeftBar"]
+position = Vector2( 21.8639, 145.214 )
+script = ExtResource( 3 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="LeftBar/Left3"]
+rotation = 1.5708
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon7" type="Sprite" parent="LeftBar/Left3/BarHitBox"]
+position = Vector2( 0.003376, -1.61328 )
+scale = Vector2( 0.0328888, 0.225131 )
+texture = ExtResource( 18 )
+
+[node name="Right3" type="KinematicBody2D" parent="LeftBar"]
+position = Vector2( 20.8881, 415.288 )
+script = ExtResource( 3 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="LeftBar/Right3"]
+position = Vector2( 1, 0 )
+rotation = 1.5708
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon8" type="Sprite" parent="LeftBar/Right3/BarHitBox"]
+position = Vector2( -0.467204, -1.61328 )
+scale = Vector2( 0.0332089, 0.225131 )
+texture = ExtResource( 18 )
+
+[node name="RRRRMid3" type="KinematicBody2D" parent="LeftBar"]
+position = Vector2( 21.5459, 387.867 )
+script = ExtResource( 3 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="LeftBar/RRRRMid3"]
+position = Vector2( 0.277374, 0 )
+rotation = 1.5708
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon7" type="Sprite" parent="LeftBar/RRRRMid3/BarHitBox"]
+position = Vector2( -0.283142, -1.66016 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 15 )
+
+[node name="RRRMid3" type="KinematicBody2D" parent="LeftBar"]
+position = Vector2( 21.9026, 361.894 )
+script = ExtResource( 3 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="LeftBar/RRRMid3"]
+rotation = 1.5708
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon6" type="Sprite" parent="LeftBar/RRRMid3/BarHitBox"]
+position = Vector2( -0.380615, -1.61328 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 20 )
+
+[node name="RRMid3" type="KinematicBody2D" parent="LeftBar"]
+position = Vector2( 21.8948, 334.629 )
+script = ExtResource( 3 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="LeftBar/RRMid3"]
+rotation = 1.5708
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon5" type="Sprite" parent="LeftBar/RRMid3/BarHitBox"]
+position = Vector2( -0.264893, -1.61328 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 10 )
+
+[node name="RMid3" type="KinematicBody2D" parent="LeftBar"]
+position = Vector2( 21.8515, 307.974 )
+script = ExtResource( 3 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="LeftBar/RMid3"]
+rotation = 1.5708
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon2" type="Sprite" parent="LeftBar/RMid3/BarHitBox"]
+position = Vector2( -0.310547, -1.61328 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 12 )
+
+[node name="RightBar" type="Node2D" parent="."]
+
+[node name="Mid4" type="KinematicBody2D" parent="RightBar"]
+position = Vector2( 1469.48, 523.649 )
+script = ExtResource( 2 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="RightBar/Mid4"]
+position = Vector2( -468.123, -242.878 )
+rotation = 1.5708
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon" type="Sprite" parent="RightBar/Mid4/BarHitBox"]
+position = Vector2( -0.274334, -1.61322 )
+scale = Vector2( 0.0410507, 0.225131 )
+texture = ExtResource( 14 )
+
+[node name="LMid4" type="KinematicBody2D" parent="RightBar"]
+position = Vector2( 1001.37, 253.691 )
+script = ExtResource( 2 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="RightBar/LMid4"]
+rotation = 1.5708
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon3" type="Sprite" parent="RightBar/LMid4/BarHitBox"]
+position = Vector2( -0.254639, -1.61328 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 12 )
+
+[node name="LLMid4" type="KinematicBody2D" parent="RightBar"]
+position = Vector2( 1001.38, 227.313 )
+script = ExtResource( 2 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="RightBar/LLMid4"]
+rotation = 1.5708
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon4" type="Sprite" parent="RightBar/LLMid4/BarHitBox"]
+position = Vector2( -0.321777, -1.61328 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 10 )
+
+[node name="LLLMid4" type="KinematicBody2D" parent="RightBar"]
+position = Vector2( 1001.34, 199.806 )
+script = ExtResource( 2 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="RightBar/LLLMid4"]
+rotation = 1.5708
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon5" type="Sprite" parent="RightBar/LLLMid4/BarHitBox"]
+position = Vector2( -0.290649, -1.61328 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 20 )
+
+[node name="LLLLMid4" type="KinematicBody2D" parent="RightBar"]
+position = Vector2( 1001.31, 172.194 )
+script = ExtResource( 2 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="RightBar/LLLLMid4"]
+position = Vector2( 0.0123291, 0.0418701 )
+rotation = 1.5708
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon6" type="Sprite" parent="RightBar/LLLLMid4/BarHitBox"]
+position = Vector2( -0.274109, -1.61328 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 15 )
+
+[node name="Left4" type="KinematicBody2D" parent="RightBar"]
+position = Vector2( 1001.3, 145.214 )
+script = ExtResource( 2 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="RightBar/Left4"]
+rotation = 1.5708
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon7" type="Sprite" parent="RightBar/Left4/BarHitBox"]
+position = Vector2( 0.003376, -1.61328 )
+scale = Vector2( 0.0328888, 0.225131 )
+texture = ExtResource( 18 )
+
+[node name="Right4" type="KinematicBody2D" parent="RightBar"]
+position = Vector2( 1000.32, 415.288 )
+script = ExtResource( 2 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="RightBar/Right4"]
+position = Vector2( 1, 0 )
+rotation = 1.5708
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon8" type="Sprite" parent="RightBar/Right4/BarHitBox"]
+position = Vector2( -0.467204, -1.61328 )
+scale = Vector2( 0.0332089, 0.225131 )
+texture = ExtResource( 18 )
+
+[node name="RRRRMid4" type="KinematicBody2D" parent="RightBar"]
+position = Vector2( 1000.98, 387.867 )
+script = ExtResource( 2 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="RightBar/RRRRMid4"]
+position = Vector2( 0.277374, 0 )
+rotation = 1.5708
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon7" type="Sprite" parent="RightBar/RRRRMid4/BarHitBox"]
+position = Vector2( -0.283142, -1.66016 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 15 )
+
+[node name="RRRMid4" type="KinematicBody2D" parent="RightBar"]
+position = Vector2( 1001.34, 361.894 )
+script = ExtResource( 2 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="RightBar/RRRMid4"]
+rotation = 1.5708
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon6" type="Sprite" parent="RightBar/RRRMid4/BarHitBox"]
+position = Vector2( -0.380615, -1.61328 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 20 )
+
+[node name="RRMid4" type="KinematicBody2D" parent="RightBar"]
+position = Vector2( 1001.33, 334.629 )
+script = ExtResource( 2 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="RightBar/RRMid4"]
+rotation = 1.5708
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon5" type="Sprite" parent="RightBar/RRMid4/BarHitBox"]
+position = Vector2( -0.264893, -1.61328 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 10 )
+
+[node name="RMid4" type="KinematicBody2D" parent="RightBar"]
+position = Vector2( 1001.29, 307.974 )
+script = ExtResource( 2 )
+
+[node name="BarHitBox" type="CollisionShape2D" parent="RightBar/RMid4"]
+rotation = 1.5708
+scale = Vector2( 10, 1.5 )
+shape = SubResource( 1 )
+
+[node name="icon2" type="Sprite" parent="RightBar/RMid4/BarHitBox"]
+position = Vector2( -0.310547, -1.61328 )
+scale = Vector2( 0.0410508, 0.225131 )
+texture = ExtResource( 12 )
+
+[node name="Boxes" type="Node2D" parent="."]
+
+[node name="Box1" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 85.0499, 49 )
+
+[node name="Box2" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 194.05, 49 )
+
+[node name="Box4" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 241, 163.127 )
+
+[node name="Box3" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 350, 49 )
+
+[node name="Box8" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 459, 163.127 )
+
+[node name="Box7" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 568, 49 )
+
+[node name="Box6" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 677, 163.127 )
+
+[node name="Box5" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 726.167, 49 )
+
+[node name="Box9" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 835.167, 49 )
+
+[node name="Box18" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 85.0499, 97 )
+
+[node name="Box17" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 39.3684, 211.127 )
+
+[node name="Box16" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 241, 211.127 )
+
+[node name="Box15" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 350, 211.127 )
+
+[node name="Box14" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 459, 97 )
+
+[node name="Box13" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 568, 127.962 )
+
+[node name="Box12" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 677, 211.127 )
+
+[node name="Box11" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 881.791, 211.127 )
+
+[node name="Box10" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 835.167, 97 )
+
+[node name="Box36" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 38.3977, 259.127 )
+
+[node name="Box35" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 350.31, 406.991 )
+
+[node name="Box34" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 241, 259.127 )
+
+[node name="Box33" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 350, 127.949 )
+
+[node name="Box32" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 459, 259.127 )
+
+[node name="Box31" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 568, 210.611 )
+
+[node name="Box30" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 677, 259.127 )
+
+[node name="Box29" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 567.691, 407.754 )
+
+[node name="Box28" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 881.904, 259.127 )
+
+[node name="Box27" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 85.0499, 440.091 )
+
+[node name="Box26" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 39.3684, 307.127 )
+
+[node name="Box25" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 241, 307.127 )
+
+[node name="Box24" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 350, 307.127 )
+
+[node name="Box23" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 459, 440.091 )
+
+[node name="Box22" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 568, 307.127 )
+
+[node name="Box21" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 677, 307.127 )
+
+[node name="Box20" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 881.791, 307.127 )
+
+[node name="Box19" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 835.167, 440.091 )
+
+[node name="Box54" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 85.0499, 488.091 )
+
+[node name="Box53" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 194.05, 488.091 )
+
+[node name="Box52" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 241, 355.127 )
+
+[node name="Box51" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 350, 488.091 )
+
+[node name="Box50" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 459, 355.127 )
+
+[node name="Box49" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 568, 488.091 )
+
+[node name="Box48" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 677, 355.127 )
+
+[node name="Box47" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 726.167, 488.091 )
+
+[node name="Box46" parent="Boxes" instance=ExtResource( 1 )]
+position = Vector2( 835.167, 488.091 )
+
+[node name="Ball" type="KinematicBody2D" parent="."]
+position = Vector2( 513.041, 553.187 )
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Ball/CollisionShape2D"]
+position = Vector2( 0.0948486, 1.8512 )
+scale = Vector2( 0.260546, 0.26371 )
+texture = ExtResource( 16 )
+
+[node name="Bar" type="AudioStreamPlayer" parent="Ball"]
+stream = ExtResource( 19 )
+volume_db = -25.0
+
+[node name="Wall" type="AudioStreamPlayer" parent="Ball"]
+stream = ExtResource( 17 )
+volume_db = -25.0
+
+[node name="Block" type="AudioStreamPlayer" parent="Ball"]
+stream = ExtResource( 13 )
+volume_db = -25.0
+
+[node name="Lose" type="AudioStreamPlayer" parent="Ball"]
+stream = ExtResource( 11 )
+volume_db = -25.0
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Wall3" type="StaticBody2D" parent="Walls"]
+position = Vector2( -10.1053, 297.474 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall3"]
+shape = SubResource( 3 )
+
+[node name="Wall2" type="StaticBody2D" parent="Walls"]
+position = Vector2( 1034.01, 297.474 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall2"]
+shape = SubResource( 3 )
+
+[node name="Wall" type="StaticBody2D" parent="Walls"]
+position = Vector2( 512.75, -10.0218 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall"]
+shape = SubResource( 4 )
+
+[node name="Floor" type="StaticBody2D" parent="Walls"]
+position = Vector2( 512.75, 610.038 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Floor"]
+shape = SubResource( 4 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" type="Popup" parent="CanvasLayer"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+popup_exclusive = true
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/PauseMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -50.0
+margin_right = 100.0
+margin_bottom = 50.0
+color = Color( 0.380392, 0.34902, 0.34902, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resume" type="ColorRect" parent="CanvasLayer/PauseMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -90.0
+margin_top = -40.0
+margin_right = 90.0
+margin_bottom = -20.0
+
+[node name="Label" type="Label" parent="CanvasLayer/PauseMenu/Resume"]
+margin_right = 180.0
+margin_bottom = 20.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Resume Game"
+align = 1
+valign = 1
+
+[node name="Restart" type="ColorRect" parent="CanvasLayer/PauseMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -90.0
+margin_top = -10.0
+margin_right = 90.0
+margin_bottom = 10.0
+
+[node name="Label" type="Label" parent="CanvasLayer/PauseMenu/Restart"]
+margin_right = 180.0
+margin_bottom = 20.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Restart Game"
+align = 1
+valign = 1
+
+[node name="Quit" type="ColorRect" parent="CanvasLayer/PauseMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -90.0
+margin_top = 20.0
+margin_right = 90.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer/PauseMenu/Quit"]
+margin_right = 180.0
+margin_bottom = 20.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Quit to Menu"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOver" type="Popup" parent="CanvasLayer"]
+pause_mode = 2
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+popup_exclusive = true
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/GameOver"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -59.5
+margin_top = -15.5
+margin_right = 59.5
+margin_bottom = 15.5
+text = "Game Over!
+Press 'R' to Restart"
+align = 1
+
+[node name="Lives" type="Label" parent="."]
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 56.0
+margin_bottom = 29.0
+text = "Lives: "
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
