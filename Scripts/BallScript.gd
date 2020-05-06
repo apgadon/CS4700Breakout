@@ -25,7 +25,7 @@ func _process(delta):
 			move_and_slide(Vector2(-1*speed,0))
 		if Input.is_action_pressed("launch"):
 			speed = 350
-			ySpeed = -325;
+			ySpeed = -325 * mul;
 			xSpeed = 0;
 			active = true;
 	elif !gover:
