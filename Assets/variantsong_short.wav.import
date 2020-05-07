@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/variantsong_short.wav-7eeb294abedaa57f9d895faa463b568f.sample"
+
+[deps]
+
+source_file="res://Assets/variantsong_short.wav"
+dest_files=[ "res://.import/variantsong_short.wav-7eeb294abedaa57f9d895faa463b568f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
