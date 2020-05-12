@@ -846,6 +846,7 @@ shape = SubResource( 4 )
 
 [node name="PauseMenu" type="Popup" parent="CanvasLayer"]
 pause_mode = 2
+visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 popup_exclusive = true
@@ -921,6 +922,17 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Quit to Menu"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="esc to pause" type="Label" parent="CanvasLayer/PauseMenu"]
+margin_left = 932.28
+margin_top = 18.8551
+margin_right = 1013.28
+margin_bottom = 32.8551
+custom_colors/font_color = Color( 1, 1, 1, 0.482353 )
+text = "ESC to pause"
 __meta__ = {
 "_edit_use_anchors_": false
 }

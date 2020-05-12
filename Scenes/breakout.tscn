@@ -454,6 +454,19 @@ margin_bottom = 15.5
 text = "Game Over!
 Press 'R' to Restart"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="esc to pause" type="Label" parent="CanvasLayer"]
+margin_left = 924.0
+margin_top = 14.0
+margin_right = 1005.0
+margin_bottom = 28.0
+text = "esc to pause"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Lives" type="Label" parent="."]
 margin_left = 15.0
